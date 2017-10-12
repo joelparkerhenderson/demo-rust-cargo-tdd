@@ -52,7 +52,15 @@ Compiling demo v0.1.0 (file:...)
 Finished dev [unoptimized + debuginfo] target(s) in 0.21 secs
 ```
 
-Rust and Cargo automatically created some placeholder files, such as a project configuration file `Cargo.toml` and an example library source code file `lib.rs`.
+Rust and Cargo automatically created some placeholder files, such as a project configuration file `Cargo.toml`, an example library source code file `lib.rs`, and git hidden files.
+
+```shell
+$ tree
+.
+├── Cargo.toml
+└── src
+    └── lib.rs
+```
 
 
 ## Sample test
