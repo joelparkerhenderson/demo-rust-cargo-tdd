@@ -67,9 +67,9 @@ mod tests {
 Explanation:
 
 ```rush
-#[cfg(test)]           // ??
+#[cfg(test)]           // Annotation: use this in cargo test, not cargo build
 mod tests {            // Define a module named "tests"
-    #[test]            // Annotation that states the next function is a test
+    #[test]            // Annotation: the next function is a test
     fn it_works() {    // Define a function as usual
     }
 }
@@ -100,11 +100,11 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ## Write a test function and normal function
 
 ```rust
-#[cfg(test)]           // ??
+#[cfg(test)]           // Annotation: use this in cargo test, not cargo build
 mod tests {            // Define a module named "tests"
     use super::*;      // Bring in code from the outer module
 
-    #[test]            // Annotation that states the next function is a test
+    #[test]            // Annotation: the next function is a test
     fn foo_test() {    // Define a function as usual
       assert!(foo());  // Assert is a test macro that passes or panics
     }
@@ -117,6 +117,8 @@ pub fn foo() -> bool { // Define a public function named "foo" that returns a bo
 ```
 
 Details:
+
+  * The line `#[cfg(test)]` is an annotation on the tests module. The annotation tells Rust to compile and run the test code only when we run cargo test, and not when we run cargo build. This saves compile time when we only want to build the library, and saves space in the resulting compiled artifact since the tests are not included. 
 
   * The line `#[test]` is an annotation before the line `fn`. This annotation indicates this is a test function, so that the test runner knows to treat this function as a test. We could also use non-test functions in the tests module, such as functions to help set up common scenarios, or perform common operations.
 
