@@ -118,11 +118,11 @@ pub fn foo() -> bool { // Define a public function named "foo" that returns a bo
 
 Details:
 
-  * The line `#[cfg(test)]` is an annotation on the tests module. The annotation tells Rust to compile and run the test code only when we run cargo test, and not when we run cargo build. This saves compile time when we only want to build the library, and saves space in the resulting compiled artifact since the tests are not included. 
+  * The line `#[cfg(test)]` is an annotation on the module `tests`. The annotation tells Rust to compile and run the test code only when we run cargo test, and not when we run cargo build. This saves compile time when we only want to build the library, and saves space in the resulting compiled artifact since the tests are not included. 
 
-  * The line `#[test]` is an annotation before the line `fn`. This annotation indicates this is a test function, so that the test runner knows to treat this function as a test. We could also use non-test functions in the tests module, such as functions to help set up common scenarios, or perform common operations.
+  * The line `#[test]` is an annotation on the function `foo_test`. The annotation states the function is a test function, so the test runner knows to treat this function as a test. The tests module can also have non-test functions, such as functions to help set up common scenarios, or perform common operations.
 
-  * The line `use super::*;` is necessary because the tests module is a regular module that follows the usual visibility rules. The test code is in an inner module, so we need to bring the code under test in the outer module into the scope of the inner module. We use a glob so that anything we define in the outer module is available to this tests module.
+  * The line `use super::*;` brings in code from the outer module. The annotation is necessary because the tests module is a regular module that follows the usual visibility rules. The test code is in an inner module, so we need to bring the code under test in the outer module into the scope of the inner module. We use a glob so that anything we define in the outer module is available to this tests module.
 
   * The `pub` keyword means public. If this function were not public, then the test would show `warning: function is never used: foo` and `note: #[warn(dead_code)] on by default`.
 
