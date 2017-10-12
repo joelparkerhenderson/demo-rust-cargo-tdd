@@ -1,5 +1,7 @@
 # Demo Rust Cargo TDD
 
+<img src="README.png" alt="Rust Cargo TDD" width="960" height="96" />
+
 Rust is a great language for systems programming.
 
 Cargo is the Rust package manager.
