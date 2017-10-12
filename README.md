@@ -94,7 +94,7 @@ Test:
 $ cargo test
   Compiling demo v0.1.0 (file:...)
    Finished dev [unoptimized + debuginfo] target(s) in 0.52 secs
-    Running ~/demo/target/debug/deps/demo-e0dde10b16c02043
+    Running target/debug/deps/demo-e0dde10b16c02043
 
 running 1 test
 test tests::it_works ... ok
