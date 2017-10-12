@@ -15,21 +15,25 @@ For the official documenation see https://www.rust-lang.org/
 
 ## Install Rust and Cargo
 
-Run:
+Install using curl:
 
-```shelll
+```shell
 $ curl https://sh.rustup.rs -sSf | sh
 ```
 
-Verify:
+Verify Rust version:
 
-```
+```shell
 $ rustc --version
 rustc 1.20.0
+```
 
+Verify Cargo verison:
+
+```shell
 $ cargo --version
 cargo 0.21.0
-
+```
 
 ## Create a project
 
