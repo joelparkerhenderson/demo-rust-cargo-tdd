@@ -108,6 +108,10 @@ running 0 tests
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
+Details:
+
+  * The most important result is `test result: ok`, which proves the test succeeded.
+
 
 ## Write a test function and normal function
 
@@ -157,8 +161,4 @@ running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
-
-Details:
-
-  * The most important result is `test result: ok`, which proves the test succeeded.
 
